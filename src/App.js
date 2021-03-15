@@ -1,23 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import Headers from "./components/Headers"
+import { Button } from 'reactstrap';
+import { ToastContainer, toast } from 'react-toastify';
+import Allcouse from './components/Allcourse';
+
 
 function App() {
+  const toasTy = () => {
+    toast.dark("Now practice", {position:"bottom-left"});
+  }
+  const start = () => {
+    toast.dark("see first botton left", {position:"top-right"});
+  }
+  const run = () => {
+    toasTy();
+    start();
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+
+      <Headers name = 'maxelit'/>
+      <hr/>
+      <h1>hello Codino</h1>
+      <Button color="warning" onClick={run}>Lock!</Button>
+      <ToastContainer/>
+      <hr/>
+      <Headers name = 'navneet chaurasiya'/>
+      <Allcouse/>
+      
+      
     </div>
   );
 }
